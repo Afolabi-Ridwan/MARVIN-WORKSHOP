@@ -395,3 +395,15 @@ li a {
     transition: ease-in-out 0.5s;
   }
 }
+
+
+@media (max-height: 700px) {
+
+  .brand-info {
+    margin-top: 110px;
+    position: absolute;
+    padding: 0 40px;
+  }
+
+
+}
