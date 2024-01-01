@@ -1,0 +1,87 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brown: rgb(165, 91, 42);
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+  color: var(--brown);
+  height: 100vh;
+}
+
+header {
+  background-color: var(--brown);
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 25px;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50vw;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: var(--brown);
+  color: #fff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+footer {
+  background-color: var(--brown);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 80vw;
+  }
+}
