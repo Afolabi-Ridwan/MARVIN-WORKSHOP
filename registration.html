@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>REPAIR2024</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="registration.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div id="titleTab">
+        <h3 id="brand-name"><span id="letterB">R</span>EPAIR2024</h3>
+        <i id="crown" class="fa-solid fa-screwdriver-wrench"></i>
+      </div>
+
+      <ul id="navbar">
+        <li><a href="index.html" id="linkTag"> Home </a></li>
+        <li><a href="about.html" id="linkTag"> About </a></li>
+        <li><a href="registration.html" id="linkTag"> Registration </a></li>
+        <li><a href="contact.html" id="linkTag"> Contact </a></li>
+      </ul>
+
+      <div id="navigation">
+        <i id="bars" class="fa-solid fa-bars"></i>
+        <i id="bicycle" class="fa-solid fa-bicycle"></i>
+      </div>
+    </div>
+
+    <!-- <div>
+      <img
+        class="firstImage"
+        src="images/new images/business-executives-participating-business-meeting.jpg"
+        alt="rfa"
+      />
+    </div> -->
+
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th class="th">Participant Type</th>
+            <th class="th">Sessions</th>
+            <th class="th">From</th>
+            <th class="th">To</th>
+            <th class="th">Cost($)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="presenterColumn td">
+                <div>
+                  <input type="radio" id="presenter" value="250" />
+                  Presenter(250$)
+                </div>
+                <div>
+                  <input type="radio" id="audience" value="100" />
+                  Audience(100$)
+                </div>
+            </td>
+
+            <td class="td">
+              <div class="sessionColumn">
+                <input id="sessionOne" type="checkbox" value="120" /> Session 1
+                ($120)
+              </div>
+              <div class="sessionColumn">
+                <input id="sessionTwo" type="checkbox" value="170" /> Session 2
+                ($170)
+              </div>
+              <div class="sessionColumn">
+                <input id="sessionThree" type="checkbox" value="100" /> Session
+                3 ($100)
+              </div>
+              <div class="sessionColumn bottomSessionColumn">
+                <input id="sessionFour" type="checkbox" value="160" /> Session 4
+                ($160)
+              </div>
+            </td>
+
+            <td class="td">
+              <div class="dateFromColumn">
+                <input
+                  id="startDate"
+                  type="date"
+                  min="2024-01-01"
+                  max="2024-12-31"
+                />
+              </div>
+            </td>
+
+            <td class="td">
+              <div class="dateToColumn">
+                <input
+                  id="endDate"
+                  type="date"
+                  min="2024-01-01"
+                  max="2024-12-31"
+                  onchange="dateChosen()"
+                />
+              </div>
+            </td>
+
+            <td class="td">
+              <div class="costColumn" id="sessionOne"><div></div></div>
+              <div class="costColumn" id="sessionTwo"><div></div></div>
+              <div class="costColumn" id="sessionThree"><div></div></div>
+              <div class="costColumn bottomCostColumn" id="sessionFour"><div></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div
+                style="
+                  border-top: 1px black solid;
+                  padding: 20px 0;
+                  margin-top: -29px;
+                "
+              ></div>
+            </td>
+
+            <td style="border: none">
+              <div class="lastRow">Total Cost</div>
+            </td>
+            <td style="border-left: 1px black solid; padding: 20px 0"></td>
+            <td class="lastRow">
+              <button class="calculateBtn">Calculate</button>
+            </td>
+            <td style="border-left: 1px black solid; padding: 20px 0">
+              <div  style="font-weight: bolder; font-size: 25px; text-align: center;"> $<span class="totalAddedAmount">0.00</span></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="mobileNavbar">
+      <div class="logo">
+        <div id="titleTab">
+          <a href="index.html" id="linkTag">
+            <h3 id="brand-name"><span id="letterB">R</span>EPAIR2024</h3>
+            <i id="crown" class="fa-solid fa-screwdriver-wrench"></i>
+          </a>
+        </div>
+
+        <div class="xMark">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <li><a href="index.html" id="linkTag"> HOME </a></li>
+        <li><a href="about.html" id="linkTag"> ABOUT </a></li>
+        <li><a href="registration.html" id="linkTag"> REGISTRATION </a></li>
+        <li><a href="contact.html" id="linkTag"> CONTACT </a></li>
+      </ul>
+
+      <a class="callNow" href="tel:+990-384-2290" id="linkTag">
+        <div>
+          <i class="fa-solid fa-phone" style="color: white"></i>
+        </div>
+        <div class="number">
+          <p>Call Now</p>
+          <p>+990-384-2290</p>
+        </div>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="registration.js"></script>
+  </body>
+</html>
