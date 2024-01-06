@@ -27,18 +27,9 @@ let timer;
 // });
 
 bars.addEventListener("click", function () {
-  // wholeNavbar.style.zIndex = "1000";
   console.log("clicked")
   wholeNavbar.classList.add("active");
-  // navbar.style.zIndex = "10000000";
-  // bars.style.display = "none";
-  // times.classList.add("active");
 
-  // if (a === false) {
-  //   carts.style.marginRight = "15px";
-  // }
-
-  // cartAmount.style.right = "60px";
 });
 
 xMark.addEventListener("click", function () {

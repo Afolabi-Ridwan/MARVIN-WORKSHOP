@@ -12,6 +12,8 @@ const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 const costColumn = document.querySelectorAll(".costColumn");
 const totalAddedAmount = document.querySelector(".totalAddedAmount");
 
+
+
 const presenterCost = presenter.value;
 const audienceCost = audience.value;
 
@@ -38,6 +40,10 @@ const a = [
 let checkedBoxes = 0;
 
 const totalAmounts = [];
+
+if(window.innerWidth <= 550){
+  alert('Switch to a bigger screen(PC) for clearer and better UI of this page. Thanks! ')
+}
 
 radios.forEach(function (radio) {
   radio.addEventListener("click", function () {
@@ -108,6 +114,7 @@ function dateChosen() {
   const timeDifference = startDateValue - endDateValue;
 
   const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+  console.log(daysDifference)
 
   checkBoxes.forEach(function (checkBox) {
     if (checkBox.checked) {
@@ -117,11 +124,24 @@ function dateChosen() {
         a.map((eachSession) => {
           if (checkBox.id === eachSession.id) {
             if (costColumnId.id === checkBox.id) {
+              if(daysDifference !== 0){
               const totalAmount = eachSession.amount * -daysDifference;
               costColumnCont.textContent = totalAmount;
               // console.log(totalAmount);
               totalAmounts.push(totalAmount);
-
+              } 
+              
+              else{
+                const totalAmount = eachSession.amount * 1;
+              costColumnCont.textContent = totalAmount;
+              // console.log(totalAmount);
+              totalAmounts.push(totalAmount);
+              }
+              if(daysDifference > 0){
+                alert("Please select valid Dates")
+              costColumnCont.textContent = null;
+              totalAmounts.push(null);
+              }
               if (isNaN(-daysDifference)) {
                 alert(" ❌ Check your date selections and try again");
                 costColumnCont.textContent = null;
@@ -136,7 +156,7 @@ function dateChosen() {
   if (checkedBoxes === 0) {
     alert(" ❌ Please select at least a session");
   }
-
+   
   costDisplayed = true;
 }
 
@@ -163,11 +183,17 @@ calcBtn.addEventListener("click", function () {
       totalAddedAmount.textContent = addedSelectedCheckBoxValue;
     }
 
+    if(addedSelectedCheckBoxValue < 0){
+      totalAddedAmount.textContent = null;
+    }
 
-    setTimeout(function(){
+
+     const popMessage = setTimeout(function(){
     const confirmMessage = prompt("Do you accept the calculated total cost for payment please?")
       
-    if(confirmMessage === ("yes" || "Yes")){
+    if(confirmMessage === ("yes")){
+      alert(" 🙏THANK YOU!!!")
+    }else if(confirmMessage === ( "Yes")){
       alert(" 🙏THANK YOU!!!")
     }
     else {
@@ -176,8 +202,14 @@ calcBtn.addEventListener("click", function () {
     
     return confirmMessage
 
-    }, 1000
+    }, 2000
     )
+    if(addedSelectedCheckBoxValue < 0){
+      clearTimeout(popMessage)
+    }else{
+      return popMessage;
+    }
+
   }
 
   console.log(totalAmounts);
