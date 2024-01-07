@@ -3,36 +3,100 @@
   <head>
     <title>Contact Us</title>
     <link rel="stylesheet" href="contactpage.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header>
-      <h1>Contact Us</h1>
+
+    <div class="navbar">
+      <div id="titleTab">
+        <h3 id="brand-name"><span id="letterB">R</span>EPAIR2024</h3>
+        <i id="crown" class="fa-solid fa-screwdriver-wrench"></i>
+      </div>
+
+      <ul id="navbar">
+        <li><a href="index.html" id="linkTag"> Home </a></li>
+        <li><a href="about.html" id="linkTag"> About </a></li>
+        <li><a href="registration.html" id="linkTag"> Registration </a></li>
+        <li><a href="contactpage.html" id="linkTag"> Contact </a></li>
+      </ul>
+
+      <div id="navigation">
+        <i id="bars" class="fa-solid fa-bars"></i>
+        <i id="bicycle" class="fa-solid fa-bicycle"></i>
+      </div>
+    </div>
+
+    <header >
+      <div style="background-color: rgb(3, 13, 39);">
+        <h1>Contact Us</h1>
+      </div>
     </header>
 
     <main>
-      <form onsubmit="sendEmail(); reset(); return false;" id="myForm">
+      <form id="myForm">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" onchange="nameInputHandler(event)" id="name" name="name" required />
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" onchange="emailInputHandler(event)"  name="email" required />
         </div>
         <div class="form-group">
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" onchange="messageInputHandler(event)" rows="5" required></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
     </main>
 
+    <div class="mobileNavbar">
+      <div class="logo">
+        <div id="titleTab">
+          <a href="index.html" id="linkTag">
+            <h3 id="brand-name"><span id="letterB">R</span>EPAIR2024</h3>
+            <i id="crown" class="fa-solid fa-screwdriver-wrench"></i>
+          </a>
+        </div>
+
+        <div class="xMark">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <li><a href="index.html" id="linkTag"> HOME </a></li>
+        <li><a href="about.html" id="linkTag"> ABOUT </a></li>
+        <li><a href="registration.html" id="linkTag"> REGISTRATION </a></li>
+        <li><a href="contactpage.html" id="linkTag"> CONTACT </a></li>
+      </ul>
+
+      <a class="callNow" href="tel:+990-384-2290" id="linkTag">
+        <div>
+          <i class="fa-solid fa-phone" style="color: white"></i>
+        </div>
+        <div class="number">
+          <p>Call Now</p>
+          <p>+990-384-2290</p>
+        </div>
+      </a>
+    </div>
+
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script src="contactpage.js"></script>
+    <script src="script.js"></script>
+    
   </body>
 </html>
