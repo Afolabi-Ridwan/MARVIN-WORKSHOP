@@ -20,7 +20,7 @@ const audienceCost = audience.value;
 let radioValue;
 let checkBoxValue;
 
-const selectedRadioValues = [];
+const selectedParticipantValues = [];
 const selectedCheckBoxesValues = [];
 let participantAmount = 0;
 let audienceAmount = 0;
@@ -30,7 +30,7 @@ let addedSelectedCheckBoxValue;
 
 let costDisplayed = false;
 
-const a = [
+const sessionInfos = [
   { id: "sessionOne", value: 120, amount: 0 },
   { id: "sessionTwo", value: 170, amount: 0 },
   { id: "sessionThree", value: 100, amount: 0 },
@@ -49,15 +49,14 @@ radios.forEach(function (radio) {
   radio.addEventListener("click", function () {
     if (radio.checked) {
       participantAmount += parseInt(radio.value);
-      selectedRadioValues.push(parseInt(radio.value));
+      selectedParticipantValues.push(parseInt(radio.value));
     } else {
-      selectedRadioValues.push(0);
+      selectedParticipantValues.push(0);
     }
 
-    addedSelectedRadioValue = selectedRadioValues.reduce(
+    addedSelectedRadioValue = selectedParticipantValues.reduce(
       (prevValue, currentvalue) => prevValue + currentvalue
     );
-    // console.log(addedSelectedRadioValue);
   });
 });
 
@@ -72,7 +71,6 @@ checkBoxes.forEach(function (checkBox) {
 
     checkedBoxes++;
 
-    // console.log(checkedBoxes)
     if (checkBox.checked) {
       audienceAmount += parseInt(checkBox.value);
       selectedCheckBoxesValues.push(parseInt(checkBox.value));
@@ -80,7 +78,7 @@ checkBoxes.forEach(function (checkBox) {
       Array.from(costColumn).some(function (costColumnId) {
         const costColumnCont = costColumnId.querySelector("div");
 
-        a.map((eachSession) => {
+        sessionInfos((eachSession) => {
           if (checkBox.id === eachSession.id) {
             if (costColumnId.id === checkBox.id) {
               eachSession.amount = eachSession.value + addedSelectedRadioValue;
@@ -94,7 +92,7 @@ checkBoxes.forEach(function (checkBox) {
           }
         });
 
-        if (selectedRadioValues.length === 0) {
+        if (selectedParticipantValues.length === 0) {
           alert("❌ Please select a participant type!!!");
           costColumnCont.textContent = null;
         }
@@ -103,7 +101,6 @@ checkBoxes.forEach(function (checkBox) {
       selectedCheckBoxesValues.push(0);
     }
 
-    // console.log(selectedCheckBoxesValues);
   });
 });
 
@@ -121,20 +118,18 @@ function dateChosen() {
       Array.from(costColumn).some(function (costColumnId) {
         const costColumnCont = costColumnId.querySelector("div");
 
-        a.map((eachSession) => {
+        sessionInfos((eachSession) => {
           if (checkBox.id === eachSession.id) {
             if (costColumnId.id === checkBox.id) {
               if(daysDifference !== 0){
               const totalAmount = eachSession.amount * -daysDifference;
               costColumnCont.textContent = totalAmount;
-              // console.log(totalAmount);
               totalAmounts.push(totalAmount);
               } 
               
               else{
                 const totalAmount = eachSession.amount * 1;
               costColumnCont.textContent = totalAmount;
-              // console.log(totalAmount);
               totalAmounts.push(totalAmount);
               }
               if(daysDifference > 0){

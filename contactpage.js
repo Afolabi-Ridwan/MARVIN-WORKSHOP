@@ -23,7 +23,6 @@ function emailInputHandler(event) {
   console.log(event.target.value);
 
   const emailState = event.target.value.includes("@" && ".");
-  console.log(email);
   if (!emailState) {
     emailInput.classList.add("invalid");
     alert("Please enter a valid mail");
