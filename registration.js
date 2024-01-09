@@ -78,7 +78,7 @@ checkBoxes.forEach(function (checkBox) {
       Array.from(costColumn).some(function (costColumnId) {
         const costColumnCont = costColumnId.querySelector("div");
 
-        sessionInfos((eachSession) => {
+        sessionInfos.map((eachSession) => {
           if (checkBox.id === eachSession.id) {
             if (costColumnId.id === checkBox.id) {
               eachSession.amount = eachSession.value + addedSelectedRadioValue;
@@ -118,7 +118,7 @@ function dateChosen() {
       Array.from(costColumn).some(function (costColumnId) {
         const costColumnCont = costColumnId.querySelector("div");
 
-        sessionInfos((eachSession) => {
+        sessionInfos.map((eachSession) => {
           if (checkBox.id === eachSession.id) {
             if (costColumnId.id === checkBox.id) {
               if(daysDifference !== 0){
