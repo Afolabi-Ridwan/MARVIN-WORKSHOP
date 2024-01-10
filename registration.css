@@ -116,59 +116,22 @@
 
   @media (max-width: 600px) {
     /* third page */
+    .firstImage {
+      width: 750px;
+    }
+
+    section{
+      overflow-x: scroll;
+      width: 750px;
+      margin-bottom: 0;
+      
+    }
+
+    table{
+      width: 700px;
+    }
    
-    table {
-      width: 100vw;
-    }
-  
-    input[type="radio"] {
-      width: 8px;
-      margin-left: -5px;
-    }
-  
   }
   
-  @media (max-width: 500px) {
-    .sessionColumn{
-      font-size: 12px;
-    }
 
-    .presenterColumn div{
-      font-size: 12px;
-    }
-
-    input[type="checkbox"] {
-      width: 10px;
-    }
-
-    .dateFromColumn input,
-     .dateToColumn input{
-      width: 70px;
-    }
-
-    thead th{
-      font-size: 13px;
-    }
-
-    .lastRow{
-      text-align: center;
-      margin-right: 5px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .sessionColumn{
-      font-size: 10px;
-    }
-
-    .presenterColumn div{
-      font-size: 10px;
-    }
-
-    input[type="checkbox"] {
-      width: 10px;
-    }
-
-        
-  }
 
